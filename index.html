@@ -369,7 +369,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-08-01 10:51:09 / 修改时间：10:54:16" itemprop="dateCreated datePublished" datetime="2023-08-01T10:51:09+08:00">2023-08-01</time>
+      <time title="创建时间：2023-08-01 10:51:09 / 修改时间：10:57:49" itemprop="dateCreated datePublished" datetime="2023-08-01T10:51:09+08:00">2023-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -411,44 +411,12 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="生信常用文件格式"><a href="#生信常用文件格式" class="headerlink" title="生信常用文件格式"></a>生信常用文件格式</h1><h3 id="序列格式"><a href="#序列格式" class="headerlink" title="序列格式"></a>序列格式</h3><ul>
-<li>fasta<ul>
+<li><p>fasta</p>
+<ul>
 <li><p>一种基于文本的、用于表示核苷酸序列或氨基酸序列的格式。在这种格式中碱基对或氨基酸用单个字母来表示，且允许在序列前添加序列名及注释，文件名常以<code>.fasta</code>、<code>.fa</code>结尾。</p>
 <blockquote>
 <p><strong>常见后缀说明：</strong><br>  <code>.fasta：</code>普通的FASTA文件 (包括：.fas、 .fasta、.fsa、.fst、.txt和.fa等)<br>  <code>.fna：</code>表示核酸序列的 FASTA 文件<br>  <code>.faa：</code>表示氨基酸序列的 FASTA 文件<br>  <code>.ffn：</code>整个基因组编码区的 FASTA 文件<br>  <code>.frn：</code>以 DNA 字母编码表示的基因组非编码 RNA 区 ( 如tRNA、rRNA ) 的 FASTA 文件</p>
 </blockquote>
-</li>
-<li><p>格式说明</p>
-<p>  <img data-src="https://whalege-1258362576.cos.ap-guangzhou.myqcloud.com/Typora/img/2C7QE-Z9jpII-20230801.png" alt="Untitled"></p>
-<ul>
-<li>每条序列的第一行是由<code>&gt;</code>开头的任意文字说明。用于序列标记，最好每条序列的标识具有唯一性，一般会用空格把头信息分为两个部分：第一部分是序列名字，它和大于号（&gt;）紧接在一起；第二部分是注释信息，这个可以没有。</li>
-<li>从第二行开始为序列本身，只允许使用既定的核苷酸或氨基酸编码符号，其中核苷酸大小写均可，氨基酸只能大写。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>fastq<ul>
-<li><p>一种基于文本的存储测序生物序列和<strong>对应碱基（或氨基酸）质量</strong>的文件格式，可以看成fasta文件的变种，一条序列总共包括四个部分。</p>
-</li>
-<li><p>格式说明</p>
-<p>  <img data-src="https://whalege-1258362576.cos.ap-guangzhou.myqcloud.com/Typora/img/2C6gJ-2bWdZi-20230801.png" alt="Untitled"></p>
-<p>  <img data-src="https://whalege-1258362576.cos.ap-guangzhou.myqcloud.com/Typora/img/2C4NX-xloCqX-20230801.png" alt="Untitled"></p>
-<ul>
-<li><p>第一行以“@”开头，随后为Illumina 测序标识符 (Sequence Identifiers) 和描述文字 (选择性部分)。</p>
-</li>
-<li><p>第二行是碱基序列。</p>
-</li>
-<li><p>第三行以“+”开头，随后为Illumina 测序标识符 (选择性部分)。</p>
-</li>
-<li><p>第四行是对应碱基的测序质量，该行中每个字符对应的 ASCII 值减去 33，即为对应第二行碱基的测序质量值。</p>
-<p>  <img data-src="https://whalege-1258362576.cos.ap-guangzhou.myqcloud.com/Typora/img/2C3Kc-w9fQdw-20230801.png" alt="Untitled"></p>
-</li>
-</ul>
-</li>
-<li><p>常用命令</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;`CL100189782_L01_read_1.fq.gz | wc -l` / (4*1000000)&quot;</span> | bc -l</span><br><span class="line"><span class="comment"># 测序碱基数计算</span></span><br><span class="line">zcat trt_N061011_1.fq.gz | awk<span class="string">&#x27;&#123;if(FNR%4==0) base+=length&#125;END&#123;print base/10^9,&quot;G&quot;;&#125;&#x27;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/86e006c4.html#more" rel="contents">
