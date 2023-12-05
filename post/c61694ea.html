@@ -27,7 +27,7 @@
 <meta property="og:description" content="本文转载于网络， 原文地址：如何通俗地理解Family-wise error rate(FWER)和False discovery rate(FDR)  如何通俗地理解Family-wise error rate(FWER)和False discovery rate(FDR)Family-wise error rate (FWER)，暂时还不了解比较通俗易懂的翻译。False discovery">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-05T09:35:47.000Z">
-<meta property="article:modified_time" content="2023-12-05T09:39:39.227Z">
+<meta property="article:modified_time" content="2023-12-05T09:52:09.739Z">
 <meta property="article:author" content="Waidong Huang">
 <meta property="article:tag" content="statistics">
 <meta property="article:tag" content="knowledge">
@@ -254,7 +254,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-12-05 17:35:47 / 修改时间：17:39:39" itemprop="dateCreated datePublished" datetime="2023-12-05T17:35:47+08:00">2023-12-05</time>
+      <time title="创建时间：2023-12-05 17:35:47 / 修改时间：17:52:09" itemprop="dateCreated datePublished" datetime="2023-12-05T17:35:47+08:00">2023-12-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -304,7 +304,7 @@
 <p>为了搞清楚上述问题，我仔细研究了维基百科和网络上的一些资料，认为通俗地理解 FWER 和 FDR 不是一件容易的事。研究者首先需要有一定的统计学假设检验的基础，而且还能够将 FWER 和 FDR 应用于实际的问题。所以，我会从假设检验谈起，然后结合自己的问题进行探讨。</p>
 <h4 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h4><p>假设检验是用于检验统计假设的一种方法。它的基本思想是小概率思想，小概率思想是指小概率事件在一次试验中基本上不会发生。</p>
 <p>假设检验的基本方法是提出一个空假设（null hypothesis），也叫做原假设，记作 $H_0$​；然后得出感兴趣的备择假设（alternative hypothesis），记作 $H_1$​ 或 $H_A$​。空假设和备择假设的指导原则是空假设是不感兴趣对研究不重要的结论，而备择假设是我们感兴趣想要证明的结论。举个例子，给定人的一些身体指标数据，判断其是否存在某种疾病（比如肺炎）。</p>
-<p> $H_0$​：某人没病（我们不感兴趣）； $H_1$​​：某人有病（我们感兴趣）。将这些身体指标数据和已确定的或健康或有病的一些人的身体数据等样本信息比较，计算 p 值，一般指定显著性水平 α &#x3D; 0.05 ，如果 p 值小于 0.05，表示这是一个小概率事件。根据小概率思想，我们与其相信这个小概率事件的发生，不如认为更为合理的选择是拒绝原假设，认为该人有病；否则无法拒绝原假设，即接受原假设，表示没有足够的证据认为该人有病。</p>
+<p> $H_0$​：某人没病（我们不感兴趣）； $H_1$​​：某人有病（我们感兴趣）。将这些身体指标数据和已确定的或健康或有病的一些人的身体数据等样本信息比较，计算 p 值，一般指定显著性水平 α = 0.05 ，如果 p 值小于 0.05，表示这是一个小概率事件。根据小概率思想，我们与其相信这个小概率事件的发生，不如认为更为合理的选择是拒绝原假设，认为该人有病；否则无法拒绝原假设，即接受原假设，表示没有足够的证据认为该人有病。</p>
 <p>注：  </p>
 <ol>
 <li>统计显著性：空假设为真的情况下拒绝零假设所要承担的风险水平，又叫概率水平。  </li>
@@ -345,28 +345,30 @@
 <li>S 表示真正例的个数</li>
 <li>U 表示真反例的个数</li>
 <li>T 表示假反例的个数</li>
-<li>R &#x3D; V + S 表示拒绝空假设的个数</li>
+<li>R = V + S 表示拒绝空假设的个数</li>
 </ul>
-<p>如果某次假设检验得到的 p 值小于显著性水平 α ，则拒绝空假设，主观上认为发现了一个有病的人（无论该人实际上真有病还是假有病），这种情况记为一次发现（discovery）。所以 R &#x3D; V + S 表示发现的个数， V 表示错误发现（false discovery）的个数， S 表示正确发现（true discovery）的个数。用 Q 表示发现中错误发现的比例，即 Q &#x3D; V &#x2F; R &#x3D; V &#x2F; ( V + S ) 。 FWER 定义为 V 大于等于 1 的概率，即 FWER &#x3D; Pr{ V ≥ 1 } &#x3D; 1 − Pr{ V &#x3D; 0 } 。FDR 定义为 Q 的期望，即 FDR &#x3D; E[Q]。</p>
-<p>因为在 m 个检验中， V,S,U,T 都是随机变量，所以 FDR 需要用期望的形式来表示。另外，如果R&#x3D;0，认为Q&#x3D;0。为了包含这种情况，FDR&#x3D;E[V&#x2F;R∣R&gt;0]⋅P{R&gt;0}。通俗地理解，可以认为 FDR&#x3D;Q&#x3D;V&#x2F;R&#x3D;V&#x2F;(V+S)。</p>
+<p>如果某次假设检验得到的 p 值小于显著性水平 α ，则拒绝空假设，主观上认为发现了一个有病的人（无论该人实际上真有病还是假有病），这种情况记为一次发现（discovery）。所以 R = V + S 表示发现的个数， V 表示错误发现（false discovery）的个数， S 表示正确发现（true discovery）的个数。用 Q 表示发现中错误发现的比例，即 Q = V / R = V / ( V + S ) 。 FWER 定义为 V 大于等于 1 的概率，即 FWER = Pr{ V ≥ 1 } = 1 − Pr{ V = 0 } 。FDR 定义为 Q 的期望，即 FDR = E[Q]。</p>
+<p>因为在 m 个检验中， V,S,U,T 都是随机变量，所以 FDR 需要用期望的形式来表示。另外，如果R=0，认为Q=0。为了包含这种情况，FDR=E[V/R∣R&gt;0]⋅P{R&gt;0}。通俗地理解，可以认为 FDR=Q=V/R=V/(V+S)。</p>
 <p>FWER 和 FDR 表示一种概念或一种方法，FWER 定义为多重假设检验中发现至少一个 I 类错误的概率，FDR 定义为多重假设检验中错误发现占所有发现的比例。另外，对应地，还存在 FWER 校正方法和 FDR 校正方法（也称为控制方法）。两类校正方法都是用来控制多重假设检验中犯 I 类错误的概率，使其低于显著性水平 α 。FWER 校正有多种实现，其中最经典的是 Bonferroni correction；FDR 校正也有多种实现，其中最经典的就是 Benjamini–Hochberg procedure。</p>
 <h4 id="为什么要使用-FWER-和-FDR-校正"><a href="#为什么要使用-FWER-和-FDR-校正" class="headerlink" title="为什么要使用 FWER 和 FDR 校正"></a>为什么要使用 FWER 和 FDR 校正</h4><p>在一次假设检验中，我们使用显著性水平 α 和 p 值得出结论。显著性水平 α 一般取 0.05 或 0.01，可以保证一次假设检验中犯 I 类错误的概率和决策错误的风险小于 α 。</p>
-<p>但是在 m 次假设检验中，假设 m&#x3D;100 和 α &#x3D; 0.01 ，假设检验之间相互独立，不犯错误的概率为  $(1-0.01)^{100}$&#x3D;36.6% ，而至少犯一次错误的概率高达$P&#x3D;1-(1-0.01)^{100}$&#x3D;1-0.366&#x3D;63.4% 。举个实际的例子，假如有一种诊断艾滋病的试剂，试验验证其准确性为 99%（每 100 次诊断就有一次 false positive）。对于一个被检测的人来说（single test），这种准确性足够了。但对于医院来说（multiple test），这种准确性远远不够，因为每诊断 10000 个人，就会有 100 个非艾滋病病人被误诊为艾滋病。这显然是不能接受的。所以，对于多重检验，如果不进行任何控制，犯一类错误的概率便会随着假设检验的个数迅速增加。</p>
+<p>但是在 m 次假设检验中，假设 m=100 和 α = 0.01 ，假设检验之间相互独立，不犯错误的概率为  $(1-0.01)^{100}$=36.6% ，而至少犯一次错误的概率高达$P=1-(1-0.01)^{100}$=1-0.366=63.4% 。举个实际的例子，假如有一种诊断艾滋病的试剂，试验验证其准确性为 99%（每 100 次诊断就有一次 false positive）。对于一个被检测的人来说（single test），这种准确性足够了。但对于医院来说（multiple test），这种准确性远远不够，因为每诊断 10000 个人，就会有 100 个非艾滋病病人被误诊为艾滋病。这显然是不能接受的。所以，对于多重检验，如果不进行任何控制，犯一类错误的概率便会随着假设检验的个数迅速增加。</p>
 <p>FWER 和 FDR 校正都可以使多重假设检验整体犯 I 类错误的概率低于预先设定的显著性水平 α 。FWER 显得较为保守，它主要是依靠减少假阳性的个数，同时也会减少 TDR(true discovery rate)。而 FDR 方法是一种更加新颖靠谱的方法，它会对每个测试用例使用校正后的 p 值（ q  值），达到了更好的效果：在检验出尽可能多的阳性结果的同时将错误发现率控制在可以接受的范围。</p>
 <h4 id="如何使用-FWER-和-FDR-校正"><a href="#如何使用-FWER-和-FDR-校正" class="headerlink" title="如何使用 FWER 和 FDR 校正"></a>如何使用 FWER 和 FDR 校正</h4><p>注：FWER 校正和 FDR 校正均有多种实现，这里只介绍两类方法的经典实现。</p>
 <p>条件：在m次多重假设检验中，每一次的空假设记为$H_1$,$H_2$​,…,$H_m$​，对应 p 值记为$p_1$,$p_2$​,…,$p_m$​，设定显著性水平α。</p>
-<p>Bonferroni correction，一般翻译为邦费罗尼校正。只要  $p_i$ ≤ $\frac{α}{m}$，就拒绝 $H_i$。可以看出，Bonferroni correction 通过把显著性水平降低到$\frac{α}{m}$。FWER 为发现至少一个 I 类错误的概率，即FWER&#x3D;Pr{V≥1}，可证:</p>
-<p>$$<br>FWER&#x3D;Pr{\bigcup_{i&#x3D;1}^{m_0}(p_i\leq\frac{\alpha}{m})}\leq\sum_{i&#x3D;1}^{m_0}{Pr(p_i\leq\frac{\alpha}{m})}&#x3D;m_0\frac{\alpha}{m}\leq m\frac{\alpha}{m}&#x3D;\alpha.<br>$$<br>这样就能控制多重假设检验整体犯 I 类错误的概率低于预先设定的显著性水平 α 。另外，FWER 控制不需要假设所有假设彼此之间相互独立，也不需要对空假设为真的个数有要求。</p>
-<p>Benjamini–Hochberg procedure，简称为 BH。首先对所有的 p 值从小到大排序，并记作$p_1$,$p_2$,…,$p_m$，其对应的空假设为$H_1$,$H_2$,…,$H_m$。若想控制 FDR 不超过 α ，需要找到最大的正整数 k，使得$P_{(k)}≤\frac{k \ast \alpha}{m}$【公式 1】。然后，拒绝 1≤i≤k 时的所有空假设$H_1$,$H_2$,…,$H_k$。可以看出，BH 相当于对排序后的假设提供了不同的显著性水平。FDR 为 Q 的期望，即 FDR&#x3D;E[Q]，可证：</p>
-<p>$$<br>FDR&#x3D;E[Q]\leq\frac{m_0}{m}​α\leα.<br>$$<br>这样就能从统计学上保证 FDR 不超过 α ，保证多重假设检验整体犯 I 类错误的概率低于预先设定的显著性水平 α 。另外，BH 是有效的条件是要求 m 个检验是相互独立的。</p>
-<p>最后再说一下 q  值 ( q -value)， $q&#x3D;\frac{P_{(k)} \ast m}{K}$，相当于对【公式 1】进行变换，一般把 q  值叫做校正后的 p 值。至于 q  值有什么好处，我还没太搞明白。我自己研究的东西已经不需要更深入了，所以写到这里就结束了。</p>
+<p>Bonferroni correction，一般翻译为邦费罗尼校正。只要  $p_i$ ≤ $\frac{α}{m}$，就拒绝 $H_i$。可以看出，Bonferroni correction 通过把显著性水平降低到$\frac{α}{m}$。FWER 为发现至少一个 I 类错误的概率，即FWER=Pr{V≥1}，可证:</p>
+<script type="math/tex; mode=display">
+FWER=Pr\{\bigcup_{i=1}^{m_0}(p_i\leq\frac{\alpha}{m})\}\leq\sum_{i=1}^{m_0}\{Pr(p_i\leq\frac{\alpha}{m})\}=m_0\frac{\alpha}{m}\leq m\frac{\alpha}{m}=\alpha.</script><p>这样就能控制多重假设检验整体犯 I 类错误的概率低于预先设定的显著性水平 α 。另外，FWER 控制不需要假设所有假设彼此之间相互独立，也不需要对空假设为真的个数有要求。</p>
+<p>Benjamini–Hochberg procedure，简称为 BH。首先对所有的 p 值从小到大排序，并记作$p_1$,$p_2$,…,$p_m$，其对应的空假设为$H_1$,$H_2$,…,$H_m$。若想控制 FDR 不超过 α ，需要找到最大的正整数 k，使得$P_{(k)}≤\frac{k \ast \alpha}{m}$【公式 1】。然后，拒绝 1≤i≤k 时的所有空假设$H_1$,$H_2$,…,$H_k$。可以看出，BH 相当于对排序后的假设提供了不同的显著性水平。FDR 为 Q 的期望，即 FDR=E[Q]，可证：</p>
+<script type="math/tex; mode=display">
+FDR=E[Q]\leq\frac{m_0}{m}​α\leα.</script><p>这样就能从统计学上保证 FDR 不超过 α ，保证多重假设检验整体犯 I 类错误的概率低于预先设定的显著性水平 α 。另外，BH 是有效的条件是要求 m 个检验是相互独立的。</p>
+<p>最后再说一下 q  值 ( q -value)， $q=\frac{P_{(k)} \ast m}{K}$，相当于对【公式 1】进行变换，一般把 q  值叫做校正后的 p 值。至于 q  值有什么好处，我还没太搞明白。我自己研究的东西已经不需要更深入了，所以写到这里就结束了。</p>
 <p>参考资料：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/False_discovery_rate">False discovery rate - Wikipedia</a></li>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Family-wise_error_rate">Family-wise error rate - Wikipedia</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35606197">如何通俗地解释错误发现率 FDR(false discovery rate)？</a></li>
-<li><a target="_blank" rel="noopener" href="http://sofasofa.io/forum_main_post.php?postid=1000461&">多重检验中的 FDR(false discovery rate, 错误发现率) 是什么？</a></li>
-<li><a target="_blank" rel="noopener" href="http://wap.sciencenet.cn/home.php?mod=space&uid=2827057&do=blog&id=968037">生物信息学中多重检验问题的一个例子（FDR、p 值、q 值）</a></li>
+<li><a target="_blank" rel="noopener" href="http://sofasofa.io/forum_main_post.php?postid=1000461&amp;">多重检验中的 FDR(false discovery rate, 错误发现率) 是什么？</a></li>
+<li><a target="_blank" rel="noopener" href="http://wap.sciencenet.cn/home.php?mod=space&amp;uid=2827057&amp;do=blog&amp;id=968037">生物信息学中多重检验问题的一个例子（FDR、p 值、q 值）</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sixu_9days/article/details/78992642">p-value&amp;FPR 以及 q-value&amp;FDR</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a353833082/article/details/45530061">多重假设检验校正为什么有效？</a></li>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26375999/">《统计学 - 贾俊平》第六版</a></li>
@@ -572,6 +574,12 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
