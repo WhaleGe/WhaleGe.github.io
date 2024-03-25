@@ -19,16 +19,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yetu.fun","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="安装jupyter。如果已经安装好，可忽略此步。1234conda create -n jupyter -yconda activate jupytermamba install jupyter -y 集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下">
+    <meta name="description" content="安装jupyter。如果已经安装好，可忽略此步。 1234conda create -n jupyter -yconda activate jupytermamba install jupyter -y  集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jupyter安装教程">
 <meta property="og:url" content="https://yetu.fun/post/66d9cc71.html">
 <meta property="og:site_name" content="Yetu">
-<meta property="og:description" content="安装jupyter。如果已经安装好，可忽略此步。1234conda create -n jupyter -yconda activate jupytermamba install jupyter -y 集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下">
+<meta property="og:description" content="安装jupyter。如果已经安装好，可忽略此步。 1234conda create -n jupyter -yconda activate jupytermamba install jupyter -y  集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-18T02:12:59.000Z">
 <meta property="article:modified_time" content="2023-05-19T09:34:38.853Z">
-<meta property="article:author" content="Waidong Huang">
+<meta property="article:author" content="Huang">
 <meta property="article:tag" content="tool">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -149,16 +149,16 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85jupyter%E3%80%82%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E5%A5%BD%EF%BC%8C%E5%8F%AF%E5%BF%BD%E7%95%A5%E6%AD%A4%E6%AD%A5%E3%80%82"><span class="nav-text">安装jupyter。如果已经安装好，可忽略此步。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E7%BB%88%E7%AB%AF%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%8C%E7%94%9F%E6%88%90%E9%BB%98%E8%AE%A4%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E6%96%87%E4%BB%B6%E5%9C%A8-home-username-jupyter%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="nav-text">集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80python-IDE%EF%BC%8C%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%EF%BC%8C%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AEjupyter%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81%E3%80%82%E8%AE%B0%E5%BD%95%E7%94%9F%E6%88%90%E7%9A%84%E5%AF%86%E9%92%A5%E3%80%82"><span class="nav-text">打开python IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-home-username-jupyter-jupyter-notebook-config-py"><span class="nav-text">修改配置文件&#x2F;home&#x2F;username&#x2F;.jupyter&#x2F;jupyter_notebook_config.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%9B%86%E7%BE%A4%E7%99%BB%E9%99%86%E8%8A%82%E7%82%B9%E5%92%8C%E6%B5%8B%E8%AF%95%E8%8A%82%E7%82%B9%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E6%A1%A5%E8%BF%9E%E6%8E%A5%E3%80%82%E5%9C%A8%E7%99%BB%E9%99%86%E8%8A%82%E7%82%B9%E8%BE%93%E5%85%A5%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%E3%80%82"><span class="nav-text">在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E6%B5%8B%E8%AF%95%E8%8A%82%E7%82%B9%E5%90%AF%E5%8A%A8jupyter-notebook-%E5%B9%B6%E4%BF%9D%E8%AF%81%E8%AF%A5%E5%91%BD%E4%BB%A4%E4%B8%8D%E4%BC%9A%E4%B8%AD%E6%96%AD"><span class="nav-text">进入测试节点启动jupyter notebook 并保证该命令不会中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8SSH%E3%80%82%E5%A6%82%E6%9E%9C%E6%98%AFwindows%EF%BC%8C%E5%88%99%E5%85%88%E5%90%AF%E5%8A%A8cmd"><span class="nav-text">在本地启动SSH。如果是windows，则先启动cmd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%8C%E8%AE%BF%E9%97%AEhttp-localhost-8190-%E4%B9%8B%E5%90%8E%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%EF%BC%88%E5%8D%B3%E6%98%AF%E6%8C%87%E7%AC%AC%E4%B8%89%E6%AD%A5%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E4%B8%B2%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AF%86%E7%A0%8112345678%EF%BC%89%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95%E3%80%82"><span class="nav-text">最后打开浏览器，访问http:&#x2F;&#x2F;localhost:8190&#x2F;, 之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85jupyter-%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E5%A5%BD%E5%8F%AF%E5%BF%BD%E7%95%A5%E6%AD%A4%E6%AD%A5"><span class="nav-text"> 安装jupyter。如果已经安装好，可忽略此步。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E7%BB%88%E7%AB%AF%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E9%BB%98%E8%AE%A4%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%9C%A8homeusernamejupyter%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="nav-text"> 集群终端运行以下命令，生成默认的配置文件，文件在&#x2F;home&#x2F;username&#x2F;.jupyter目录下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80python-ide%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AEjupyter%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81-%E8%AE%B0%E5%BD%95%E7%94%9F%E6%88%90%E7%9A%84%E5%AF%86%E9%92%A5"><span class="nav-text"> 打开python IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6homeusernamejupyterjupyter_notebook_configpy"><span class="nav-text"> 修改配置文件&#x2F;home&#x2F;username&#x2F;.jupyter&#x2F;jupyter_notebook_config.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%9B%86%E7%BE%A4%E7%99%BB%E9%99%86%E8%8A%82%E7%82%B9%E5%92%8C%E6%B5%8B%E8%AF%95%E8%8A%82%E7%82%B9%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E6%A1%A5%E8%BF%9E%E6%8E%A5-%E5%9C%A8%E7%99%BB%E9%99%86%E8%8A%82%E7%82%B9%E8%BE%93%E5%85%A5%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-text"> 在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E6%B5%8B%E8%AF%95%E8%8A%82%E7%82%B9%E5%90%AF%E5%8A%A8jupyter-notebook-%E5%B9%B6%E4%BF%9D%E8%AF%81%E8%AF%A5%E5%91%BD%E4%BB%A4%E4%B8%8D%E4%BC%9A%E4%B8%AD%E6%96%AD"><span class="nav-text"> 进入测试节点启动jupyter notebook 并保证该命令不会中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8ssh-%E5%A6%82%E6%9E%9C%E6%98%AFwindows%E5%88%99%E5%85%88%E5%90%AF%E5%8A%A8cmd"><span class="nav-text"> 在本地启动SSH。如果是windows，则先启动cmd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AEhttplocalhost8190-%E4%B9%8B%E5%90%8E%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%8D%B3%E6%98%AF%E6%8C%87%E7%AC%AC%E4%B8%89%E6%AD%A5%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E4%B8%B2%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AF%86%E7%A0%8112345678%E5%8D%B3%E5%8F%AF%E7%99%BB%E5%BD%95"><span class="nav-text"> 最后打开浏览器，访问http:&#x2F;&#x2F;localhost:8190&#x2F;, 之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Waidong Huang"
-      src="/images/avatar1.gif">
+    <img class="site-author-image" itemprop="image" alt="Huang"
+      src="/images/avatar4.png">
   <!--
-  <p class="site-author-name" itemprop="name">Waidong Huang</p>
+  <p class="site-author-name" itemprop="name">Huang</p>
   -->
   <div class="site-description" itemprop="description">肿瘤/免疫/单细胞</div>
 </div>
@@ -230,8 +230,8 @@
     <link itemprop="mainEntityOfPage" href="https://yetu.fun/post/66d9cc71.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar1.gif">
-      <meta itemprop="name" content="Waidong Huang">
+      <meta itemprop="image" content="/images/avatar4.png">
+      <meta itemprop="name" content="Huang">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,14 +310,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="安装jupyter。如果已经安装好，可忽略此步。"><a href="#安装jupyter。如果已经安装好，可忽略此步。" class="headerlink" title="安装jupyter。如果已经安装好，可忽略此步。"></a><strong>安装jupyter。如果已经安装好，可忽略此步。</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda create -n jupyter -y</span><br><span class="line">conda activate jupyter</span><br><span class="line">mamba install jupyter -y</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="集群终端运行以下命令，生成默认的配置文件，文件在-home-username-jupyter目录下"><a href="#集群终端运行以下命令，生成默认的配置文件，文件在-home-username-jupyter目录下" class="headerlink" title="集群终端运行以下命令，生成默认的配置文件，文件在/home/username/.jupyter目录下"></a><strong>集群终端运行以下命令，生成默认的配置文件，文件在/home/username/.jupyter目录下</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="打开python-IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。"><a href="#打开python-IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。" class="headerlink" title="打开python IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。"></a><strong>打开python IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="修改配置文件-home-username-jupyter-jupyter-notebook-config-py"><a href="#修改配置文件-home-username-jupyter-jupyter-notebook-config-py" class="headerlink" title="修改配置文件/home/username/.jupyter/jupyter_notebook_config.py"></a><strong>修改配置文件/home/username/.jupyter/jupyter_notebook_config.py</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.allow_remote_access = True</span><br><span class="line">c.NotebookApp.ip = &#x27;0.0.0.0&#x27;</span><br><span class="line">c.NotebookApp.notebook_dir=&#x27;/path/jupyter &#x27; # 这里的路径是指在浏览器上进入的路径即是jupyter在服务器上的工作路径，在该路径中自己拥有读写权限。</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.password=&#x27;argon2:$argon2id$v=19$m=10240,t=10,p=8$fr1n0n9bTPZZHyriNaVecQ$hIzmU2S5SeJuoPUq7MLCag &#x27;  # 这个对应的是jupyter访问密码12345678的密码串，需要写入配置文件</span><br><span class="line">c.NotebookApp.port = 8110 # 可自行指定一个端口，表示jupyter运行的输入输出流都导向此端口。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。"><a href="#在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。" class="headerlink" title="在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。"></a><strong>在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfL localhost:8135:localhost:8110 yournames@测试节点名称 #修改为自己的用户名和主机名</span><br><span class="line">-N 告诉SSH没有命令要被远程执行；</span><br><span class="line">-f   告诉SSH在后台执行；</span><br><span class="line">-L  是指定port forwarding的配置，远端的端口是第二个localhost后面接的port 8110，本地的端口是第一个localhost后面接的port 8135；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="进入测试节点启动jupyter-notebook-并保证该命令不会中断"><a href="#进入测试节点启动jupyter-notebook-并保证该命令不会中断" class="headerlink" title="进入测试节点启动jupyter notebook 并保证该命令不会中断"></a><strong>进入测试节点启动jupyter notebook 并保证该命令不会中断</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-<h3 id="在本地启动SSH。如果是windows，则先启动cmd"><a href="#在本地启动SSH。如果是windows，则先启动cmd" class="headerlink" title="在本地启动SSH。如果是windows，则先启动cmd"></a><strong>在本地启动SSH。如果是windows，则先启动cmd</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 8190:localhost:8135 yournames@登陆节点ip</span><br><span class="line">192.168.61.1表示测试节点的ip</span><br><span class="line">8135表示登录节点用于侦听测试节点所用的端口。</span><br><span class="line">8190表示本地用于侦听登陆节点所用的端口。</span><br><span class="line"></span><br><span class="line">ssh -L 8190:localhost:8135 yournames@登陆节点ip</span><br></pre></td></tr></table></figure>
-<h3 id="最后打开浏览器，访问http-localhost-8190-之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。"><a href="#最后打开浏览器，访问http-localhost-8190-之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。" class="headerlink" title="最后打开浏览器，访问http://localhost:8190/, 之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。"></a><strong>最后打开浏览器，访问<a target="_blank" rel="noopener" href="http://localhost:8190/">http://localhost:8190/</a>, 之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。</strong></h3>
+    <div class="post-body" itemprop="articleBody"><h3 id="安装jupyter-如果已经安装好可忽略此步"><a class="markdownIt-Anchor" href="#安装jupyter-如果已经安装好可忽略此步"></a> <strong>安装jupyter。如果已经安装好，可忽略此步。</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda create -n jupyter -y</span><br><span class="line">conda activate jupyter</span><br><span class="line">mamba install jupyter -y</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="集群终端运行以下命令生成默认的配置文件文件在homeusernamejupyter目录下"><a class="markdownIt-Anchor" href="#集群终端运行以下命令生成默认的配置文件文件在homeusernamejupyter目录下"></a> <strong>集群终端运行以下命令，生成默认的配置文件，文件在/home/username/.jupyter目录下</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="打开python-ide并运行以下代码用于设置jupyter访问密码-记录生成的密钥"><a class="markdownIt-Anchor" href="#打开python-ide并运行以下代码用于设置jupyter访问密码-记录生成的密钥"></a> <strong>打开python IDE，并运行以下代码，用于设置jupyter访问密码。记录生成的密钥。</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件homeusernamejupyterjupyter_notebook_configpy"><a class="markdownIt-Anchor" href="#修改配置文件homeusernamejupyterjupyter_notebook_configpy"></a> <strong>修改配置文件/home/username/.jupyter/jupyter_notebook_config.py</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.allow_remote_access = True</span><br><span class="line">c.NotebookApp.ip = &#x27;0.0.0.0&#x27;</span><br><span class="line">c.NotebookApp.notebook_dir=&#x27;/path/jupyter &#x27; # 这里的路径是指在浏览器上进入的路径即是jupyter在服务器上的工作路径，在该路径中自己拥有读写权限。</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.password=&#x27;argon2:$argon2id$v=19$m=10240,t=10,p=8$fr1n0n9bTPZZHyriNaVecQ$hIzmU2S5SeJuoPUq7MLCag &#x27;  # 这个对应的是jupyter访问密码12345678的密码串，需要写入配置文件</span><br><span class="line">c.NotebookApp.port = 8110 # 可自行指定一个端口，表示jupyter运行的输入输出流都导向此端口。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="在集群登陆节点和测试节点之间进行桥连接-在登陆节点输入如下命令"><a class="markdownIt-Anchor" href="#在集群登陆节点和测试节点之间进行桥连接-在登陆节点输入如下命令"></a> <strong>在集群登陆节点和测试节点之间进行桥连接。在登陆节点输入如下命令。</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfL localhost:8135:localhost:8110 yournames@测试节点名称 #修改为自己的用户名和主机名</span><br><span class="line">-N 告诉SSH没有命令要被远程执行；</span><br><span class="line">-f   告诉SSH在后台执行；</span><br><span class="line">-L  是指定port forwarding的配置，远端的端口是第二个localhost后面接的port 8110，本地的端口是第一个localhost后面接的port 8135；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="进入测试节点启动jupyter-notebook-并保证该命令不会中断"><a class="markdownIt-Anchor" href="#进入测试节点启动jupyter-notebook-并保证该命令不会中断"></a> <strong>进入测试节点启动jupyter notebook 并保证该命令不会中断</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+<h3 id="在本地启动ssh-如果是windows则先启动cmd"><a class="markdownIt-Anchor" href="#在本地启动ssh-如果是windows则先启动cmd"></a> <strong>在本地启动SSH。如果是windows，则先启动cmd</strong></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 8190:localhost:8135 yournames@登陆节点ip</span><br><span class="line">192.168.61.1表示测试节点的ip</span><br><span class="line">8135表示登录节点用于侦听测试节点所用的端口。</span><br><span class="line">8190表示本地用于侦听登陆节点所用的端口。</span><br><span class="line"></span><br><span class="line">ssh -L 8190:localhost:8135 yournames@登陆节点ip</span><br></pre></td></tr></table></figure>
+<h3 id="最后打开浏览器访问httplocalhost8190-之后输入密码即是指第三步中配置文件中的密码串对应的密码12345678即可登录"><a class="markdownIt-Anchor" href="#最后打开浏览器访问httplocalhost8190-之后输入密码即是指第三步中配置文件中的密码串对应的密码12345678即可登录"></a> <strong>最后打开浏览器，访问<a target="_blank" rel="noopener" href="http://localhost:8190/">http://localhost:8190/</a>, 之后输入密码（即是指第三步中配置文件中的密码串对应的密码12345678）即可登录。</strong></h3>
+
     </div>
 
     
@@ -332,11 +340,11 @@
   </button>
   <div class="post-reward">
       <div>
-        <img src="/images/wechatpay.jpg" alt="Waidong Huang 微信">
+        <img src="/images/wechatpay.jpg" alt="Huang 微信">
         <span>微信</span>
       </div>
       <div>
-        <img src="/images/alipay.jpg" alt="Waidong Huang 支付宝">
+        <img src="/images/alipay.jpg" alt="Huang 支付宝">
         <span>支付宝</span>
       </div>
 
@@ -348,7 +356,7 @@
 <div class="post-copyright">
 <ul>
   <li class="post-copyright-author">
-      <strong>本文作者： </strong>Waidong Huang
+      <strong>本文作者： </strong>Huang
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
@@ -452,11 +460,11 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa-solid fa-paw"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Copyright © Waidong Huang All Rights Reserved.</span>
+  <span class="author" itemprop="copyrightHolder">Copyright © Huang All Rights Reserved.</span>
 </div>
 <div class="wordcount">
   <span class="post-meta-item">
